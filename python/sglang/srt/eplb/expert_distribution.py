@@ -351,7 +351,7 @@ class _SinglePassGatherer(ABC):
 
 class _DetailSinglePassGatherer(_SinglePassGatherer):
     # DeepSeek V3 has this value; should generalize later
-    _TOP_K_NUM = int(os.environ.get("SGLANG_MOE_TOP_K", 8))
+    _TOP_K_NUM = get_int_env_var("SGLANG_MOE_TOP_K", 8)
 
     def __init__(
         self,
